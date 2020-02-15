@@ -18,7 +18,9 @@ return array(
 	 *
 	 */
 
-	'_root_' => 'welcome/index',
+//	'_root_' => 'welcome/index',
+    '_root_' => 'sample/index',
+
 
 	/**
 	 * -------------------------------------------------------------------------

@@ -20,6 +20,10 @@ class Controller_Shop extends Controller {
         return View::forge('shop/index');
     }
 
+
+    /**
+     * Chapter3-3：フォームとの連携
+     */
     public function action_save() {
         $item = Model_Item::forge();
 

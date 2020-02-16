@@ -13,9 +13,20 @@ class Controller_Sample extends Controller {
     /**
      * Chapter2-3：ビューを使う
      */
-    public function action_index() {
-        $data['hello'] = 'こんにちは';
+//    public function action_index() {
+//        $data['hello'] = 'こんにちは';
+//
+//        return View::forge('sample/index', $data);
+//    }
 
-        return View::forge('sample/index', $data);
+    /**
+     * Chapter2-4：アクションとパラメータ
+     *
+     * 例：http://localhost:8000/sample/calc/5/8
+     */
+    public function action_calc($a, $b) {
+        $answer = $a * $b;
+
+        print($answer);
     }
 }

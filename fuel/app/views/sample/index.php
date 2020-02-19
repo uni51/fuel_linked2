@@ -13,9 +13,8 @@
     </div>
 
     <div id="content">
-        <?php if(isset($name)): ?>
-            <p>あなたの名前は「<?php print($name); ?>」ですね</p>
-        <?php endif; ?>
+        <p><?php print($html); ?></p>
+        <p><?php print($danger); ?></p>
     </div>
 
     <div id="foot">

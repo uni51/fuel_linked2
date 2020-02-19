@@ -2,6 +2,13 @@
 
 class Controller_Sample extends Controller {
 
+    public function action_index() {
+        return View::forge('sample/index');
+    }
+
+    /**
+     * Chapter4-3：HTMLをそのままビューに受け渡す
+     */
 //    public function action_index() {
 //        $data = array();
 //        $data['html'] = '<p>段落のタグです。<strong>強調します。</strong></p>';
@@ -10,12 +17,14 @@ class Controller_Sample extends Controller {
 //        return View::forge('sample/index', $data, false);
 //    }
 
-
-    public function action_index() {
-        $view = View::forge('sample/index');
-        $view->set('html', '<p>段落です</p>', false);
-        $view->set('danger', '<script></script>');
-
-        return $view;
-    }
+    /**
+     * Chapter4-3：HTMLをそのままビューに受け渡す
+     */
+//    public function action_index() {
+//        $view = View::forge('sample/index');
+//        $view->set('html', '<p>段落です</p>', false);
+//        $view->set('danger', '<script></script>');
+//
+//        return $view;
+//    }
 }

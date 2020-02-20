@@ -1,30 +1,21 @@
 <?php
 
-class Controller_Sample extends Controller {
+class Controller_Sample extends Controller_Template {
 
     public function action_index() {
-        return View::forge('sample/index');
+        $this->template->title = 'お問い合わせ';
+        $data = array();
+        $data['myname'] = 'たにぐち';
+        $this->template->content = View::forge('sample/index', $data);
     }
 
-    /**
-     * Chapter4-3：HTMLをそのままビューに受け渡す
-     */
-//    public function action_index() {
-//        $data = array();
-//        $data['html'] = '<p>段落のタグです。<strong>強調します。</strong></p>';
-//
-//        // 第3パラメータの「false」は、サニタイズの有無
-//        return View::forge('sample/index', $data, false);
-//    }
+    public function action_check() {
+        $this->template->title = 'お問い合わせ：確認';
+        $this->template->content = View::forge('sample/check');
+    }
 
-    /**
-     * Chapter4-3：HTMLをそのままビューに受け渡す
-     */
-//    public function action_index() {
-//        $view = View::forge('sample/index');
-//        $view->set('html', '<p>段落です</p>', false);
-//        $view->set('danger', '<script></script>');
-//
-//        return $view;
-//    }
+    public function action_thanks() {
+        $this->template->title = 'お問い合わせ：確認';
+        $this->template->content = View::forge('sample/thanks');
+    }
 }

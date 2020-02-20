@@ -15,3 +15,6 @@
         </tr>
     </table>
 </form>
+
+<hr>
+<?php print(View::forge('parts/news')); ?>

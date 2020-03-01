@@ -85,6 +85,11 @@ dd {
     padding: 2px;
     margin-left: 10px;
 }
+.error {
+    font-size: 80%;
+    color: #f33;
+    margin: 10px 0;
+}
 
 #foot {
     width: 780px;

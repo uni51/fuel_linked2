@@ -142,7 +142,8 @@ return array(
 	 *  The default language.
 	 */
 
-	'language' => 'en',
+	//'language' => 'en',
+    'language' => 'ja',
 
 	/**
 	 *  Fallback language when file isn't available for default language.

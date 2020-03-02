@@ -11,7 +11,12 @@
     </tr>
     <tr>
         <th><?php print(Form::label('メールアドレス', 'email')); ?></th>
-        <td><?php print(Form::input('email')); ?></td>
+        <td>
+            <?php print(Form::input('email')); ?>
+            <?php if ($val->error('email')): ?>
+                <p class="error"><?php print($val->error('email')); ?></p>
+            <?php endif; ?>
+        </td>
     </tr>
     <tr>
         <th><?php print(Form::label('性別', 'gender')); ?></th>

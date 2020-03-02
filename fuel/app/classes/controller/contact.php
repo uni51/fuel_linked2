@@ -7,6 +7,9 @@ class Controller_Contact extends Controller_Template {
 
         $val->add('myname', 'お名前')
             ->add_rule('required');
+        $val->add('email', 'メールアドレス')
+            ->add_rule('required')
+            ->add_rule('valid_email');
 
         if(Input::post('submit')) {
             if($val->run()) {

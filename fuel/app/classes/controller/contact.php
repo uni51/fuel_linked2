@@ -38,8 +38,14 @@ class Controller_Contact extends Controller_Template {
         $data['myname'] = Session::get_flash('myname');
         $data['email'] = Session::get_flash('email');
         $data['gender'] = Session::get_flash('gender');
+        Session::keep_flash(); // セッションをもう一画面保持する
 
         $this->template->content = View::forge('contact/check', $data);
+    }
+
+    public function action_thanks() {
+        $this->template->title = 'お問い合わせ：完了';
+        $this->template->content = View::forge('contact/thanks');
     }
 
 }

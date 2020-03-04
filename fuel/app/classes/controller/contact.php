@@ -44,6 +44,27 @@ class Controller_Contact extends Controller_Template {
     }
 
     public function action_thanks() {
+        // メールを送信する
+        $email = Email::forge();
+        $email->from('master@example.com');
+        $email->to('master@example.com');
+        $email->subject('お問い合わせが到着しました');
+
+        $data = array();
+        $data['myname'] = Session::get_flash('myname');
+        $data['email'] = Session::get_flash('email');
+        $data['gender'] = Session::get_flash('gender');
+        $body = View::forge('contact/email', $data);
+
+        $email->body(mb_convert_encoding($body, 'jis'));
+
+        try {
+            $email->send();
+        } catch (\EmailSendingFailedException $e) {
+            print('Send error');
+            exit();
+        }
+
         $this->template->title = 'お問い合わせ：完了';
         $this->template->content = View::forge('contact/thanks');
     }
